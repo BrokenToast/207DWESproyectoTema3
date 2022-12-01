@@ -1,0 +1,34 @@
+table, th, td {
+    border-collapse:separate;
+    border-spacing: 1vw;
+}
+td{
+    border: 2px solid black;
+    padding: 1vw;
+    border-radius:3vw;
+}
+table{
+    margin-top: 3vw;
+}
+table img{
+    width: 2em;
+}
+table{
+    font-size: 1.2em;
+}
+/*Resta 2 y sale el numero del ejercicicio*/
+tr:nth-of-type(13){
+    display: none;
+}
+tr:nth-of-type(15){
+    display: none;
+}
+tr:nth-of-type(16){
+    display: none;
+}
+tr:nth-of-type(22){
+    display: none;
+}
+tr:nth-of-type(28){
+    display: none;
+}

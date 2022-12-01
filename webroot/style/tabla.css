@@ -1,0 +1,25 @@
+/*Global*/
+td,th{
+    padding: 4px;
+    border: 2px solid black;
+}
+/*tabla */
+table{
+    margin-bottom: 1%;
+}
+/*Cabeza de la tabla*/
+tr:nth-child(1){
+    background-color: rgb(185, 185, 185);
+    font-weight: bold;
+    text-decoration: underline;
+}
+tr:nth-child(2){
+    background-color: rgb(168, 130, 130);
+}
+/*Cuerpo de la tabla*/
+tr>td:nth-child(1){
+    background-color: rgb(133, 236, 236);
+}
+tr>td:nth-child(2){
+    background-color: rgb(213, 255, 255);
+}

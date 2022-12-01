@@ -1,0 +1,30 @@
+/*Tabla form*/
+#tableForm td{
+    border: none;
+    padding: 4px;
+}
+#tableForm td>h3{
+    text-align: center;
+}
+#botones>button{
+    width: calc(80%/3);
+    padding-top: 5px;
+    padding-bottom: 4px;
+    display: inline-block;
+    font-size: 1.25em;
+}
+.error{
+    width: 400px;
+}
+#informacion{
+    background:rgb(239, 244, 159);
+}
+:optional:not(:disabled){
+    border-color: yellow;
+}
+:required{
+    border-color: blue;
+}
+:disabled{
+    border-color: red;
+}
