@@ -13,18 +13,19 @@
     display: inline-block;
     font-size: 1.25em;
 }
-.error{
+tr>td:nth-child(2){
     width: 400px;
+    color: red;
 }
 #informacion{
     background:rgb(239, 244, 159);
 }
-:optional:not(:disabled){
+.opcional{
     border-color: yellow;
 }
-:required{
+.obligatorio{
     border-color: blue;
 }
-:disabled{
+.bloqueado{
     border-color: red;
 }
