@@ -20,7 +20,7 @@
             * Ejercicio 4
             * @author: Luis Pérez Astorga
             * @version: 1.0
-            * Fecha Modification: 8/11/2022
+            * @since 8/11/2022
             */
             print"<h1>DateTime</h1>";
             // Delcracion de que el lenguaje es Portuges

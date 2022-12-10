@@ -21,7 +21,7 @@ recogidas.</h1>
                 * Ejercicio 22
                 * @author: Luis Pérez Astorga
                 * @version: 1.0
-                * Fecha Modification: 8/11/2022
+                * @since 8/11/2022
                 */
                 if(isset($_REQUEST['enviar'])){
                     //Si se a dado a enviar se emprime los datos

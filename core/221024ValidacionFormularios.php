@@ -235,29 +235,20 @@ class validacionFormularios {  //ELIMINA EL METODO VALIDATEDATE Y LO INCLUYE EN 
      * 
      * Funcion que compueba si el parametro recibido es una fecha valida.
      * 
-     * @param string $fecha Cadena con formato de fecha a comprobar.
+     * @param DateTime $fecha Cadena con formato de fecha a comprobar.
      * @param string $fechaMaxima Fecha maxima que se puede introducir
      * @param string $fechaMinima Fecha minima que se puede introducir
      * @param boolean $obligatorio Valor booleano indicado mediante 1, si es obligatorio o 0 si no lo es.
      * @return null|string Devuelve null si es correcto o un mensaje de error en caso de que lo haya.
      */
     public static function validarFecha($fecha, $fechaMaxima = '01/01/2200', $fechaMinima = "01/01/1900", $obligatorio = 0) { //REDISEÑO TOTAL Y AÑADIDOS PARAMETROS INICIALES
-        $mensajeError = null;
-        $fechaMaxima = strtotime($fechaMaxima); //PASAR A TIMESTAMP PARA PODER OPERAR
-        $fechaMinima = strtotime($fechaMinima);
-        if ($obligatorio == 1) {
-            $mensajeError = self::comprobarNoVacio($fecha);
+        if ($obligatorio == 1 && empty($fecha)) {
+            return 'Campo vacio';
         }
-        $fechaFormateada = strtotime($fecha);  //CREAR FECHA PARA TRABAJAR CON LAS FUNCIONES DE PHP
-
-        if (is_bool($fechaFormateada) && !empty($fecha)) {
-            $mensajeError = " Formato incorrecto de fecha (Año-Mes-dia) (2000-01-01).";
-        } else {
-            if(!empty($fecha) && ($fechaFormateada < $fechaMinima) || ($fechaFormateada > $fechaMaxima)){
-                $mensajeError = " Por favor introduzca una fecha entre " . date('d/m/Y', $fechaMinima) . " y " . date('d/m/Y', $fechaMaxima) . ".";
-            }
+        $fechaFormateada=$fecha->format("d/m/Y");
+        if ($fechaFormateada<$fechaMinima && $fechaFormateada>$fechaMaxima){
+            return " Por favor introduzca una fecha entre " . date('d/m/Y', $fechaMinima) . " y " . date('d/m/Y', $fechaMaxima) . ".";
         }
-        return $mensajeError;
     }
 
     /**

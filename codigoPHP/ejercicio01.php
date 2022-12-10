@@ -20,7 +20,7 @@ var_dump).</h1>
             * Ejercicio 0
             * @author: Luis Pérez Astorga
             * @version: 1.0
-            * Fecha Modification: 8/11/2022
+            * @since 8/11/2022
             */
             // Declaracion de las variables
             $texto="hola que tal";

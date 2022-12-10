@@ -20,7 +20,7 @@ recogidas; en el caso de que alguna respuesta esté vacía o errónea volverá a
                 * Ejercicio 23
                 * @author: Luis Pérez Astorga
                 * @version: 1.0
-                * Fecha Modification: 8/11/2022
+                * @since 8/11/2022
                 */
                 require_once '../core/221024ValidacionFormularios.php';                
                 // Variable centinela 

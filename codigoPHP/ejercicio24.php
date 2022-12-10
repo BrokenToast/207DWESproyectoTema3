@@ -22,7 +22,7 @@ respuestas que habíamos tecleado correctamente aparecerán en el formulario y n
                 * Ejercicio 24
                 * @author: Luis Pérez Astorga
                 * @version: 1.1
-                * Fecha Modification: 15/11/2022
+                * @since 15/11/2022
                 */
                 require_once '../core/221024ValidacionFormularios.php';          
                 // Variable centinela 
@@ -31,7 +31,7 @@ respuestas que habíamos tecleado correctamente aparecerán en el formulario y n
                     //Si esta el boton enviar se a pulsado
                     $aErrores['nombre']=validacionFormularios::comprobarAlfabetico($_REQUEST['nombre'],40,2,1);
                     $aErrores['apellido']=validacionFormularios::comprobarAlfabetico($_REQUEST['apellido'],40,2,1);
-                    $aErrores['fechaNacimiento']=validacionFormularios::validarFecha($_REQUEST['fechaNacimiento'],date("d/m/Y",time()),"01/01/1950",1);
+                    $aErrores['fechaNacimiento']=validacionFormularios::validarFecha($_REQUEST['fechaNacimiento'] ?? new DateTime($fecha[0]."-".$fecha[1]."-".$fecha[2]),date("d/m/Y",time()),"01/01/1950",1);
                     $aErrores['dni']=validacionFormularios::validarDni($_REQUEST['dni'],1);
                     $aErrores['peso']=validacionFormularios::comprobarEntero($_REQUEST['peso'],500,0,1);
                     $entradaOK=true;
@@ -78,37 +78,37 @@ respuestas que habíamos tecleado correctamente aparecerán en el formulario y n
                             <tr>
                                 <td>
                                     <label for="nombre">Nombre*</label><br>
-                                    <input type="text" name="nombre" id="nombre"  required <?php if(isset($_REQUEST['enviar']) && empty($aErrores['nombre'])){ printf('value="%s"',$_REQUEST['nombre']); } ?>>
+                                    <input type="text" name="nombre" id="nombre" class="obligatorio" <?php if(isset($_REQUEST['enviar']) && empty($aErrores['nombre'])){ printf('value="%s"',$_REQUEST['nombre']); } ?>>
                                 </td>
-                                <td></td>
+                                <td><?php if(!empty($aErrores['nombre'])){print $aErrores['nombre'];}?></td>
                             </tr>
                             <tr>
                                 <td>
                                     <label for="apellido">Apellido*</label><br>
-                                    <input type="text" name="apellido" id="apellido"  required <?php if(isset($_REQUEST['enviar']) && empty($aErrores['apellido'])){ printf('value="%s"',$_REQUEST['apellido']); } ?>>
+                                    <input type="text" name="apellido" id="apellido"  class="obligatorio" <?php if(isset($_REQUEST['enviar']) && empty($aErrores['apellido'])){ printf('value="%s"',$_REQUEST['apellido']); } ?>>
                                 </td>
-                                <td></td>
+                                <td><?php if(!empty($aErrores['apellido'])){print $aErrores['apellido'];}?></td>
                             </tr>
                             <tr>
                                 <td>
                                     <label for="fechaNacimiento">Fecha de Nacimiento(DD/MM/YYYY)*</label><br>
-                                    <input type="text" name="fechaNacimiento" id="fechaNacimiento"  required <?php if(isset($_REQUEST['enviar']) && empty($aErrores['fechaNacimiento'])){ printf('value="%s"',$_REQUEST['fechaNacimiento']); } ?>>
+                                    <input type="text" name="fechaNacimiento" id="fechaNacimiento"  class="obligatorio" <?php if(isset($_REQUEST['enviar']) && empty($aErrores['fechaNacimiento'])){ printf('value="%s"',$_REQUEST['fechaNacimiento']); } ?>>
                                 </td>
-                                <td></td>
+                                <td><?php if(!empty($aErrores['fechaNacimiento'])){print $aErrores['fechaNacimiento'];}?></td>
                             </tr>
                             <tr>
                                 <td>
                                     <label for="dni">Introduce el DNI*</label><br>
-                                    <input type="text" name="dni" id="dni"  required <?php if(isset($_REQUEST['enviar']) && empty($aErrores['dni'])){ printf('value="%s"',$_REQUEST['dni']); } ?>>
+                                    <input type="text" name="dni" id="dni"  class="obligatorio" <?php if(isset($_REQUEST['enviar']) && empty($aErrores['dni'])){ printf('value="%s"',$_REQUEST['dni']); } ?>>
                                 </td>
-                                <td></td>
+                                <td><?php if(!empty($aErrores['dni'])){print $aErrores['dni'];}?></td>
                             </tr>
                             <tr>
                                 <td>
                                     <label for="peso">Peso*</label><br>
-                                    <input type="text" name="peso" id="peso"<?php if(isset($_REQUEST['enviar']) && empty($aErrores['peso'])){ printf('value="%s"',$_REQUEST['peso']); } ?>>
+                                    <input type="text" name="peso" id="peso" class="opcional"<?php if(isset($_REQUEST['enviar']) && empty($aErrores['peso'])){ printf('value="%s"',$_REQUEST['peso']); } ?>>
                                 </td>
-                                <td></td>
+                                <td><?php if(!empty($aErrores['peso'])){print $aErrores['peso'];}?></td>
                             </tr>
                             <tr>
                                 <td>
@@ -119,23 +119,20 @@ respuestas que habíamos tecleado correctamente aparecerán en el formulario y n
                                         <p><label><input type="radio" name="sexo" value="otro" checked>Otro</label></p>
                                     </fieldset>
                                 </td>
-                                <td></td>
                             </tr>
                             <tr>
                                 <td>
                                     <label for="descripcion">Descripción:</label><br>
-                                    <textarea name="descripcion" id="" cols="30" rows="10"><?php
+                                    <textarea name="descripcion" id="" cols="30" rows="10" class="opcional"><?php
                                         if(!empty($aErrores)){
                                             print $_REQUEST['descripcion'];
                                         }
                                     ?></textarea>
-                            
                                 </td>
                             </tr>
                             <tr>
                                 <td id="informacion">
                                     <p>* Son campos obligatorios</p>
-
                                 </td>
                             </tr>
                             <tr>
