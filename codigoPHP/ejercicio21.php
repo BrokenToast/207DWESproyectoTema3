@@ -18,7 +18,7 @@ las preguntas y las respuestas recogidas.</h1>
             <!-- Ejercicio 21
             @author: Luis Pérez Astorga
             @version: 1.0
-            Fecha Modification: 8/11/2022 -->
+            @since 8/11/2022 -->
             <form action="Tratamiento.php" method="POST">
                 <label>Introduce tu nombre</label>
                 <input type="text" name="nombre">

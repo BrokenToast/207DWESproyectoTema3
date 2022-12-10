@@ -107,7 +107,7 @@ las preguntas y las respuestas recogidas</h1>
                 * Tratamiento 
                 * @author: Luis Pérez Astorga
                 * @version: 1.0
-                * Fecha Modification:8/11/2022
+                * @since 8/11/2022
                 */
                 printf("<p>Nombre: %s</p>",$_REQUEST['nombre']);
                 printf('<p style="color:%s;">Color</p>',$_REQUEST['color']);

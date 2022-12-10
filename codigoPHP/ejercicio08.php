@@ -19,7 +19,7 @@
             * Ejercicio 8
             * @author: Luis Pérez Astorga
             * @version: 1.0
-            * Fecha Modification: 8/11/2022
+            * @since 8/11/2022
             */
             printf("Tu ip es %s",$_SERVER['REMOTE_ADDR']);
         ?>

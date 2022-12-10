@@ -22,7 +22,7 @@ distintas técnicas (foreach(), while(), for()) para mostrar los asientos ocupad
                 * Ejercicio 17
                 * @author: Luis Pérez Astorga
                 * @version: 1.0
-                * Fecha Modification: 8/11/2022
+                * @since 8/11/2022
                 */
                 // Iniciaclizacion de array butacas a un espacio en blanco.
                 for ($pasillo=0;$pasillo<20;$pasillo++){

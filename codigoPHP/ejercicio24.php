@@ -22,7 +22,7 @@ respuestas que habíamos tecleado correctamente aparecerán en el formulario y n
                 * Ejercicio 24
                 * @author: Luis Pérez Astorga
                 * @version: 1.1
-                * Fecha Modification: 15/11/2022
+                * @since 15/11/2022
                 */
                 require_once '../core/221024ValidacionFormularios.php';          
                 // Variable centinela 

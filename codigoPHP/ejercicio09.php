@@ -19,7 +19,7 @@
             * Ejercicio 9
             * @author: Luis Pérez Astorga
             * @version: 1.0
-            * Fecha Modification: 8/11/2022
+            * @since 8/11/2022
             */
             printf("Este es el archivo que se esta ejecutando %s",$_SERVER['SCRIPT_NAME']);
         ?>

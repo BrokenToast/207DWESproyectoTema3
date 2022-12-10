@@ -20,18 +20,32 @@
                 /**
                 * Ejercicio 12
                 * @author: Luis Pérez Astorga
-                * @version: 1.0
+                * @version: 1.1 Cambiamos la estructura de mostrar la SuperGlobales
+                * @since 10/12/2022
+                * @version 1.0   
                 * @since 8/11/2022
                 */
                 //Recorrido con un foreach la variable superglobal $_SERVER
                 ?>
-                <div>
-                    <h3>$GLOBALS</h3> 
+                <div id=super>
                     <?php
-                    foreach($GLOBALS as $nomVariable=>$aVariableSuper ){
+                    //Delcaración de un array con todas las superglobales
+                    $aVairablesSuper=[
+                        "_SESSION"=>$_SESSION?? array(),
+                        "GLOBALS"=>$GLOBALS,
+                        "_SERVER"=>$_SERVER,
+                        "_GET"=>$_GET,
+                        "_POST"=>$_POST,
+                        "_FILES"=>$_FILES,
+                        "_REQUEST"=>$_REQUEST,
+                        "_ENV"=>$_ENV,
+                        "_COOKIE"=>$_COOKIE];
+                    // Recorremos el  la array de SuperGlobales y la imprimimos como tablas;
+                    foreach($aVairablesSuper as $nomVariable=>$aVariableSuper ){
                         if ($nomVariable=="_SESION") {
                             $varSesion=false;
                         }
+                        //En caso de que la SuperGlobal este vaica muesta esta tabla;
                         if(empty($aVariableSuper)){
                             ?>
                             <table>
@@ -43,8 +57,8 @@
                                 </tr>
                             </table> 
                             <?php
-                            continue;
-                        }
+                        }else{
+                        // En caso de que no este vacia muestra el contenido como en una tabla
                         ?><table>
                             <tr>
                                 <th colspan="2"><?php print $nomVariable; ?></th>
@@ -58,7 +72,7 @@
                                     ?>  
                                     <tr>
                                         <td><?php print $clave; ?></td>
-                                        <td><?php print $valor; ?></td>
+                                        <td><?php print_r($valor); ?></td>
                                     </tr>
                                     <?php
                                 }
@@ -66,18 +80,7 @@
                         </table> 
                     <?php
                         }
-                        if(!isset($varSesion)){
-                            ?>
-                            <table>
-                                <tr>
-                                    <th><?php print "_SESION" ?></th>
-                                </tr>
-                                <tr>
-                                    <td>Esta vacia</td>
-                                </tr>
-                            </table> 
-                            <?php
-                        }
+                    }
                     ?>
                 </div>
         </article>

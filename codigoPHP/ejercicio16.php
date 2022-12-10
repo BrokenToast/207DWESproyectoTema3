@@ -19,7 +19,7 @@
                 * Ejercicio 16
                 * @author: Luis Pérez Astorga
                 * @version: 1.0
-                * Fecha Modification: 8/11/2022
+                * @since 8/11/2022
                 */
                 // Inicializacion del array moneyWeek con clave Dia y valor salario del dia
                 $amoneyWeek=[

@@ -19,7 +19,7 @@
             * Ejercicio 0
             * @author: Luis Pérez Astorga
             * @version: 1.0
-            * Fecha Modification: 8/11/2022
+            * @since: 8/11/2022
             */
             print"Hola mundo";
             phpinfo();
