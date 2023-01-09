@@ -31,9 +31,9 @@ respuestas que habíamos tecleado correctamente aparecerán en el formulario y n
                     //Si esta el boton enviar se a pulsado
                     $aErrores['nombre']=validacionFormularios::comprobarAlfabetico($_REQUEST['nombre'],40,2,1);
                     $aErrores['apellido']=validacionFormularios::comprobarAlfabetico($_REQUEST['apellido'],40,2,1);
-                    $aErrores['fechaNacimiento']=validacionFormularios::validarFecha($_REQUEST['fechaNacimiento'] ?? new DateTime($fecha[0]."-".$fecha[1]."-".$fecha[2]),date("d/m/Y",time()),"01/01/1950",1);
+                    $aErrores['fechaNacimiento']=validacionFormularios::validarFecha($_REQUEST['fechaNacimiento'],date("d/m/Y",time()),"01/01/1920",1);
                     $aErrores['dni']=validacionFormularios::validarDni($_REQUEST['dni'],1);
-                    $aErrores['peso']=validacionFormularios::comprobarEntero($_REQUEST['peso'],500,0,1);
+
                     $entradaOK=true;
                     foreach($aErrores as $value){
                         if(!empty($value)){
@@ -47,6 +47,7 @@ respuestas que habíamos tecleado correctamente aparecerán en el formulario y n
                     //Si el centinela es true para a procesar las respues.
                     $aRespuesta['nombre']=$_REQUEST['nombre'];
                     $aRespuesta['apellido']=$_REQUEST['apellido'];
+                    $aFecha=preg_split("/\//",$_REQUEST['fechaNacimiento']);
                     $aRespuesta['fechaNacimiento']=$_REQUEST['fechaNacimiento'];
                     $aRespuesta['dni']=$_REQUEST['dni'];
                     $aRespuesta['peso']=$_REQUEST['peso'];
